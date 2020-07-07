@@ -1,0 +1,17 @@
+name: Deployed index.html
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Deploying to surge
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install nodejs
+        uses: actions/setup-nodejs@v2-beta
+        with:
+          node-version: 12
+      - name: Installing surge
+        run : npm install -g surge
+      - name: Run surge
+        run: surge ./ myApp.surge.sh --token ${{secrets.SURGE_TOKEN}}
