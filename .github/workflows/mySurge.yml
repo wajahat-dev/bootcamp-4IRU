@@ -4,9 +4,9 @@ on: [push]
 
 jobs:
   build:
-    name: install ubuntu
+
     runs-on: ubuntu-latest
-    name: deploying index.html to surge
+    name: install ubuntu && deploying index.html to surge
     steps:
       - uses: actions/checkout@v2
       - name: installing Node.js  ob ubuntu
