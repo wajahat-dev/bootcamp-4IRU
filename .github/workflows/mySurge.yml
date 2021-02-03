@@ -1,12 +1,30 @@
 name: depolying my index.html
 on: [push]
 
+# ====================== one 
+# jobs:
+#   build:
 
+#     runs-on: ubuntu-latest
+#     name: install ubuntu && deploying index.html to surge
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: installing Node.js  ob ubuntu
+#         uses: actions/setup-node@v2-beta
+#         with:
+#           node-version: 12
+#       - name: installaling Surge globally
+#         run: npm install -g surge
+#       - name: running surge 
+#         run: surge ./one/ bootcamp_one.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+#         run: surge ./two/my-app/ bootcamp_one.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+
+
+# ====================== two
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    name: install ubuntu && deploying index.html to surge
+    name: install ubuntu && deploying files to surge
     steps:
       - uses: actions/checkout@v2
       - name: installing Node.js  ob ubuntu
@@ -15,6 +33,7 @@ jobs:
           node-version: 12
       - name: installaling Surge globally
         run: npm install -g surge
+      - name: creating react app
+        run: npx create-react-app my-app
       - name: running surge 
-        run: surge ./one/ bootcamp_one.surge.sh --token ${{ secrets.SURGE_TOKEN }}
-
+        run: surge ./two/my-app/ bootcamp_one.surge.sh --token ${{ secrets.SURGE_TOKEN }}
