@@ -36,4 +36,4 @@ jobs:
       - name: creating react app
         run: npx create-react-app my-app
       - name: running surge 
-        run: surge ./two/my-app/ bootcamp_one.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+        run: surge ./two/ bootcamp_two.surge.sh --token ${{ secrets.SURGE_TOKEN }}
