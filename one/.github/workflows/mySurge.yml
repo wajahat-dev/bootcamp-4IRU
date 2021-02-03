@@ -1,19 +1,20 @@
-name: Deployed index.html
+name: depolying my index.html
 on: [push]
 
 
 jobs:
   build:
+    name: install ubuntu
     runs-on: ubuntu-latest
-    name: Deploying to surge
+    name: deploying index.html to surge
     steps:
       - uses: actions/checkout@v2
-      - name: Install Node.js
+      - name: installing Node.js  ob ubuntu
         uses: actions/setup-node@v2-beta
         with:
           node-version: 12
-      - name: Install Surge
+      - name: installaling Surge globally
         run: npm install -g surge
-      - name: Run surge
+      - name: running surge 
         run: surge ./ bootcamp_wajahat.surge.sh --token ${{ secrets.SURGE_TOKEN }}
 
