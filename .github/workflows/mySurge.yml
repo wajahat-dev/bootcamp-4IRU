@@ -33,7 +33,14 @@ jobs:
           node-version: 12
       - name: installaling Surge globally
         run: npm install -g surge
-      - name: creating react app
-        run: npx create-react-app my-app
+#       - name: creating react app
+#         run: npx create-react-app my-app
+      - name: Yarn CLI
+        uses: CultureHQ/actions-yarn@v1.0.1
+        with:
+          cmd: install
+      - name: yarn building
+        run: yarn build
+      
       - name: running surge 
-        run: surge ./two/my-app/src bootcamp_two.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+        run: surge ./two/build bootcamp_two.surge.sh --token ${{ secrets.SURGE_TOKEN }}
