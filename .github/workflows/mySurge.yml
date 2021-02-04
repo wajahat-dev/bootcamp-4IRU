@@ -36,7 +36,7 @@ jobs:
 #       - name: creating react app
 #         run: npx create-react-app my-app
       - name: Yarn CLI
-        uses: CultureHQ/actions-yarn@v1.0.1
+        uses: borales/actions-yarn@v1.0.1
         with:
           cmd: install
       - name: yarn building
