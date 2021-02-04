@@ -36,9 +36,10 @@ jobs:
 #       - name: creating react app
 #         run: npx create-react-app my-app
       - name: Yarn CLI
-        uses: CultureHQ/actions-yarn@v1.0.1
-        with:
-          cmd: install
+#         uses: CultureHQ/actions-yarn@v1.0.1
+#         with:
+#           cmd: install
+        run: curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
       - name: yarn building
         run: yarn build
       
