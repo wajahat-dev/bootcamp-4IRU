@@ -41,7 +41,7 @@ jobs:
 #           cmd: install
         run: curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
       - name: yarn building
-        run: yarn build
+        run: yarn build ./two/my-app
       
       - name: running surge 
         run: surge ./two/my-app/build bootcamp_two.surge.sh --token ${{ secrets.SURGE_TOKEN }}
